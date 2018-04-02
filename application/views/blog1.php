@@ -67,15 +67,12 @@
 				<div class="col-xs-10 text-right menu-1 main-nav">
 					<ul>
 						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
+						<li><a href="#" data-nav-section="blog">Blog</a></li>
 						<li><a href="#" data-nav-section="about">About</a></li>
 					</ul>
 				</div>
 			</div>
-			
-		</div>
-	</nav>
-
-	<div id="gtco-hero" class="js-fullheight"  data-section="home">
+			<div id="gtco-hero" class="js-fullheight"  data-section="home">
 		<div class="flexslider js-fullheight">
 			<ul class="slides">
 		   	<li style="background-image: url(assets/images/img_bg_3.jpg);">
@@ -84,7 +81,7 @@
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
 		   					<h2>Framework For CodeIgneiter</h2>
-		   					<button><h1><a href="view_blog" >Blog</a></h1></button>
+		   					
 		   				</div>
 		   			</div>
 		   		</div>
@@ -94,48 +91,29 @@
 	  	</div>
 	</div>
 
-		
+	<div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <!-- Project Details Go Here -->
+                  <h2 class="text-uppercase">Ilustration</h2>
+                  <img class="img-fluid d-block mx-auto" src="assets/image/portfolio/01-full.jpg" alt="">
+                  <p>Semakin menjamurnya bisnis distro di Indonesia membuat bisnis kaos menjadi lahan yang bagus untuk mengembangkan usaha. Banyak distro distro menjual Tshirt dengan berbagai desain yang bervariasi. Kebanyakan distro menjual Tshirt dan membuat desain sendiri-sendiri dan juga berdasarkan pesanan pelanggannya.Kali ini kita bicarakan mengenai bisnis kaos  distro terutama sablon. Kalau dilihat jenisnya ada 2 macam jenis sablon, yaitu manual dan digital. Masing-masing tentu saja memiliki kelebihan dan kekurangannya. Sablon digital cocok digunakan untuk model design yang rumit, butuh ketajaman tekstur dan memiliki ketelitian yang tinggi. Jika design anda adalah berbentuk wajah manusia atau permainan gradasi warna, sangat tepat untuk jenis sablon ini. Anda yang ingin ber-bisnis Tshirt untuk produksi terbatas sangat cocok digunakan jenis sablon digital. Bisa dikatakan dengan sablon digital akan didapatkan hasil seindah warna aslinya. Hanya saja kelemahannya kurang tahan / tidak awet dibanding sablon manual. Bagaimana dengan sablon manual ? sebagian besar “seniman” / praktisi sablon akan menyukai jenis sablon ini karena dapat berkreasi lebih dalam untuk menghasilkan Baju T Shirt . Hasil Baju Tshirt lebih tahan lama dan lebih terlihat art-nya. Untuk nilai ekonomisnya dapat dicapai untuk produksi dalam jumlah yang banyak. Bisnis kaos dengan sablon manual bisa kita dapati terutama di distro-distro. Berapa  modal awal untuk berbisnis distro? Tergantung.Yang terutama adalah lokasi dan dekorasi lokasi. Jika anda memutuskan untuk membuka distro secara off-line, artinya anda harus memiliki toko secara fisik. Lokasi yang strategis akan menentukan keberhasilan anda. Lain lagi jika anda membuka distro dan menjualnya secara online, disini modal yang diperlukan lebih sedikit, namun anda harus siap menghadapi sangat banyak pesaing</p>
+                  
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fa fa-times"></i>
+                    Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-	<div class="gtco-section-overflow">
-
-		<div class="gtco-section" id="gtco-portfolio" data-section="about">
-			<div class="gtco-container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-						<h2>About</h2>
-						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					</div>
-				</div>
-				
-	
-
-	
-	</div>
-
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
-	
-	<!-- jQuery -->
-	<script src="assets/js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="assets/js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="assets/js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="assets/js/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
-	<script src="assets/js/owl.carousel.min.js"></script>
-	<!-- countTo -->
-	<script src="assets/js/jquery.countTo.js"></script>
-	<!-- Flexslider -->
-	<script src="assets/js/jquery.flexslider-min.js"></script>
-	<!-- Magnific Popup -->
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
-	<script src="assets/js/magnific-popup-options.js"></script>
-	<!-- Main -->
-	<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
-
+			</div>
+			</nav>
+			</div>
+			</body>
+			</html>
+			

@@ -67,6 +67,7 @@
 				<div class="col-xs-10 text-right menu-1 main-nav">
 					<ul>
 						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
+						<li><a href="#" data-nav-section="blog">Blog</a></li>
 						<li><a href="#" data-nav-section="about">About</a></li>
 					</ul>
 				</div>
@@ -75,44 +76,38 @@
 		</div>
 	</nav>
 
-	<div id="gtco-hero" class="js-fullheight"  data-section="home">
-		<div class="flexslider js-fullheight">
-			<ul class="slides">
-		   	<li style="background-image: url(assets/images/img_bg_3.jpg);">
-		   		<div class="overlay"></div>
-		   		<div class="container">
-		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
-		   				<div class="slider-text-inner">
-		   					<h2>Framework For CodeIgneiter</h2>
-		   					<button><h1><a href="view_blog" >Blog</a></h1></button>
-		   				</div>
-		   			</div>
-		   		</div>
-		   	</li>
-		   	
-		  	</ul>
-	  	</div>
-	</div>
-
-		
-
-	<div class="gtco-section-overflow">
-
-		<div class="gtco-section" id="gtco-portfolio" data-section="about">
-			<div class="gtco-container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-						<h2>About</h2>
-						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					</div>
+<div id="gtco-blog" data-section="blog">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2>Blog</h2>
+					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 				</div>
-				
-	
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<a href="blog.php" class="gtco-card-item has-text">
+						<figure>
+							<div class="overlay"><i class="ti-plus"></i></div>
+							<img src="assets/images/portofolio/01-thumbnail.jpg" alt="Image" class="img-responsive">
+						</figure>
+						<div class="gtco-text text-left">
+							<h2>Clothing</h2>
+							<p>Ilustration image in..</p>
+							<p class="gtco-category">Sep. 25th, 2016 by John Doe</p>
+						</div>
+					</a>
+				</div>
 
-	
+				<div class="clearfix visible-lg-block visible-md-block"></div>
+				<div class="clearfix visible-sm-block"></div>
+
+			</div>
+		</div>
 	</div>
 
-	<div class="gototop js-top">
+
+<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 	

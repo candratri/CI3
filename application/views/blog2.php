@@ -67,15 +67,12 @@
 				<div class="col-xs-10 text-right menu-1 main-nav">
 					<ul>
 						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
+						<li><a href="#" data-nav-section="blog">Blog</a></li>
 						<li><a href="#" data-nav-section="about">About</a></li>
 					</ul>
 				</div>
 			</div>
-			
-		</div>
-	</nav>
-
-	<div id="gtco-hero" class="js-fullheight"  data-section="home">
+			<div id="gtco-hero" class="js-fullheight"  data-section="home">
 		<div class="flexslider js-fullheight">
 			<ul class="slides">
 		   	<li style="background-image: url(assets/images/img_bg_3.jpg);">
@@ -84,7 +81,7 @@
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
 		   					<h2>Framework For CodeIgneiter</h2>
-		   					<button><h1><a href="view_blog" >Blog</a></h1></button>
+		   					
 		   				</div>
 		   			</div>
 		   		</div>
@@ -94,48 +91,29 @@
 	  	</div>
 	</div>
 
-		
+	<div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <!-- Project Details Go Here -->
+                  <h2 class="text-uppercase">Explore</h2>
+                  <img class="img-fluid d-block mx-auto" src="assets/image/portfolio/01-full.jpg" alt="">
+                  <p>Kali ini Saya Akan Memuat Artikel Tentang Keindahan Alam dan Daftar Keindahan Alam yang ada di Dunia Terutama di Indonesia. Indonesia merupakan negara yang memiliki berjuta keindahan Panorama didalamnya. Kekayaan akan sumber daya alamnya merupakan daya tarik tersendiri bagi nerga-negara lain. Tentunya pemandangan dan keindahan alamnya juga banyak dan beragam, mulai dari sabang sampai merauke terdapat keindahan alam yang tersembunyi yang tidak dimiliki oleh negara lain. Maka dari itu cintailah dan rawatlah alam yang kita miliki ini.  Keindahan merupakan sifat dan ciri dari orang, hewan, tempat, objek, atau gagasan yang memberikan pengalaman persepsi kesenangan, bermakna, atau kepuasan. Dalampengertian yang lain diartikan sebagai keadaan yang enak dipandang, cantik, bagus benar atau elok. Keindahan dipelajari sebagai bagian dari estetika, sosiologi, psikologi sosial, dan budaya. Sebuah “kecantikan yang ideal” adalah sebuah entitas yang dikagumi, atau memiliki fitur yang dikaitkan dengan keindahan dalam suatu budaya tertentu, untuk kesempurnaannya. Keindahan dalam arti luas adalah keindahan dalam arti luas mengandung pengertian ide kebaikan. Misalnya Plato menyebut watak yang indah dan hukum yang indah, sedangkan Aristoteles merumuskan keindahan sebagai sesuatu yang baik dan juga menyenangkan dengan meliputi keindahan seni, keindahan alam,keindahan moral dll Keindahan dalam arti yang terbatas mempunyai arti yang lebih disempitkan sehingga hanya menyangkut bendabenda yang dapat -diserap dengan penglihatan, yakni berupa keindahan bentuk dan warna. keindahan tersusun dari berbagai keselarasan dan kebalikan dari garis, warna, bentuk, nada, dan kata-kata. Ada pula yang berpendapat bahwa keindahan adalah suatu kumpulan hubungan-hubungan yang selaras dalam suatu benda dan di antara benda itu dengan si pengarnat. </p>
+                  
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fa fa-times"></i>
+                    Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-	<div class="gtco-section-overflow">
-
-		<div class="gtco-section" id="gtco-portfolio" data-section="about">
-			<div class="gtco-container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-						<h2>About</h2>
-						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					</div>
-				</div>
-				
-	
-
-	
-	</div>
-
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
-	
-	<!-- jQuery -->
-	<script src="assets/js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="assets/js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="assets/js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="assets/js/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
-	<script src="assets/js/owl.carousel.min.js"></script>
-	<!-- countTo -->
-	<script src="assets/js/jquery.countTo.js"></script>
-	<!-- Flexslider -->
-	<script src="assets/js/jquery.flexslider-min.js"></script>
-	<!-- Magnific Popup -->
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
-	<script src="assets/js/magnific-popup-options.js"></script>
-	<!-- Main -->
-	<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
-
+			</div>
+			</nav>
+			</div>
+			</body>
+			</html>
+			
