@@ -68,6 +68,7 @@
 					<ul>
 						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
 						<li><a href="#" data-nav-section="about">About</a></li>
+						<li><a href="tabel">Tabel</a></li>
 					</ul>
 				</div>
 			</div>
@@ -84,7 +85,7 @@
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
 		   					<h2>Framework For CodeIgneiter</h2>
-		   					<button><h1><a href="view_blog" >Blog</a></h1></button>
+		   					<h1><a href="view_blog" >Blog</a></h1>
 		   				</div>
 		   			</div>
 		   		</div>

@@ -76,35 +76,8 @@
       
     </div>
   </nav> 
-	<br><br><br><br>
-<div class="container">
-    	<div class="col-xs-12 col-sm-9 col-md-9">
 
-      <?php foreach ($artikel as $key): ?>
-
-          <div class="row">
-            <div class="col-md-4">
-              <h3><?php echo $key->judul_blog ?></h3>
-              <br>
-              <img src="gambar/<?php echo $key->gambar_blog;?>" alt="Image" width="500">
-              <p>
-                diupload tanggal : <?php echo $key->tgl_blog ?><br>
-                <a href="<?php echo site_url()?>view_blog/detail/<?php echo $key->id_blog ?>">Read More ...</a>
-              </p>
-              <br></br>
-              <!-- button delete -->
-              <a href='view_blog/delete/<?php echo $key->id_blog?>' class='btn btn-sm btn-danger'>HAPUS</a>
-            </div>
-          </div>
-        </div>
-        <?php endforeach ?>
-</div>
-<div class="container">
-      <?php
-        echo form_open('view_blog/tambah', array('enctype'=>'multipart/form-data')); 
-       ?>
-
-      <table>
+<table>
         <tr>
           <td><font color="black">Judul</font></td>
           <td>:</td>
@@ -118,7 +91,7 @@
         <tr>
           <td><font color="black">Tanggal</font> </td>
           <td>:</td>
-          <td><input type="date" name="input_tanggal" value=""></td>
+          <td><input type="text" name="input_tanggal" value=""></td>
         </tr>
         <tr>
           <td><font color="black">Gambar</font></td>
@@ -129,9 +102,7 @@
           <td colspan="3"><input type="submit" name="simpan" value="simpan"></td>
         </tr>
       </table>
-    </div>
-
-	<div class="gototop js-top">
+      <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
   </div>
   
