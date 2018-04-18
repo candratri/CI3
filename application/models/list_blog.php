@@ -13,6 +13,21 @@
 			$query = $this->db->query('select * from blog where id_blog='.$id);
 			return $query->result();
 		}
+
+		public function get_default($id)
+		{
+			$data = array();
+	  		$options = array('id_blog' => $id);
+	  		$Q = $this->db->get_where('blog',$options,1);
+	    		if ($Q->num_rows() > 0){
+	      			$data = $Q->row_array();
+	   			}
+	  		$Q->free_result();
+	 		return $data;
+		}
+
+
+
 		public function upload()
 		{
 			$config['upload_path'] = './gambar/';
@@ -38,7 +53,11 @@
 				'judul_blog' => $this->input->post('input_judul'),
 				'tgl_blog' => $this->input->post('input_tanggal'),
 				'content' => $this->input->post('input_content'),
+				'jenis_blog' => $this->input->post('input_jenis'),
+				'pengarang_blog' => $this->input->post('input_pengarang'),
+				'email_blog' => $this->input->post('input_email'),
 				'gambar_blog' => $upload['file']['file_name']
+				
 			);
 
 			$this->db->insert('blog', $data);
@@ -69,10 +88,26 @@
 			'judul_blog' => $this->input->post('judul_atk'),
 			'tanggal_blog' => $this->input->post('tggl_atk'),
 			'content' => $this->input->post('isi_atk'),
-			'gambar_blog' => $upload['file']['file_name']		
+			'jenis_blog' => $this->input->post('jenis_atk'),
+			'pengarang_blog' => $this->input->post('pengarang_atk'),
+			'email_blog' => $this->input->post('email_atk'),
+			'gambar_blog' => $upload['file']['file_name']
+			
 		);
 		
 		$this->db->insert('nama', $data);
+	}
+
+	public function update($post, $id){
+		//parameter $id wajib digunakan agar program tahu ID mana yang ingin diubah datanya.
+		$judul_atk = $this->db->escape($post['judul_atk']);
+		$isi_atk = $this->db->escape($post['isi_atk']);
+		$tggl_atk = $this->db->escape($post['tggl_atk']);
+		$jenis_atk = $this->db->escape($post['jenis_atk']);
+		$pengarang_atk = $this->db->escape($post['pengarang_atk']);
+		$email_atk = $this->db->escape($post['email_atk']);
+		$sql = $this->db->query("UPDATE blog SET judul_blog = $judul_atk, tgl_blog = $tggl_atk, content = $isi_atk, jenis_blog = $jenis_atk, pengarang_blog = $pengarang_atk, email_blog = $email_atk WHERE id_blog = ".intval($id));
+		return true;
 	}
 
 

@@ -88,7 +88,19 @@
               <img src="../../gambar/<?php echo $key->gambar_blog;?>" alt="Image" width="500">
               <p>
                 diupload tanggal : <?php echo $key->tgl_blog ?><br>
-                <?php echo $key->content ?>
+                
+              </p>
+              <p>
+                Jenis blog : <?php echo $key->jenis_blog ?><br>
+                
+              </p>
+              <p>
+                Pengarang blog : <?php echo $key->pengarang_blog ?><br>
+                
+              </p>
+              <p>
+                Email Pengarang : <?php echo $key->email_blog ?><br>
+                
               </p>
             </div>
           </div>

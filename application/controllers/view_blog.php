@@ -20,10 +20,20 @@ class view_blog extends CI_Controller {
 	// Membuat fungsi create
 	public function tambah()
 	{
-		$this->load->model('list_blog');
-		$data = array();
 
-		if ($this->input->post('simpan')) {
+		$this->load->model('list_blog');
+		 $data = array();		
+  
+		 $this->load->library('form_validation');
+		 $this->form_validation->set_rules('input_judul', 'Judul', 'required', array('required' => 'isi %s .'));
+		 $this->form_validation->set_rules('input_content','Content','required',array('required' => 'isi %s.'));
+
+		 if($this->form_validation->run()==FALSE){
+		 	$this->load->view('tambah');
+		 }
+		 else
+		 {
+		 	if ($this->input->post('simpan')) {
 			$upload = $this->list_blog->upload();
 
 			if ($upload['result'] == 'success') {
@@ -32,23 +42,23 @@ class view_blog extends CI_Controller {
 			}else{
 				$data['message'] = $upload['error'];
 			}
+		 }
+		 $this->load->view('tambah', $data);
 		}
-
-		$this->load->view('home_view', $data);
 	}
 	//fungsi update
 	
 	public function edit($id){
-		$this->load->model("tabel_view");
+		$this->load->model("list_blog");
 		$data['tipe'] = "Edit";
-		$data['default'] = $this->tabel_view->get_default($id);
+		$data['default'] = $this->list_blog->get_default($id);
 
-		if(isset($_POST['tombol_submit'])){
-			$this->model_data_teman->update($_POST, $id);
+		if(isset($_POST['simpan'])){
+			$this->list_blog->update($_POST, $id);
 			redirect("view_blog");
 		}
 
-		$this->load->view("home_view",$data);
+		$this->load->view("tabel_view",$data);
 	}
 
 

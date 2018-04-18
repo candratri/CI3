@@ -77,11 +77,14 @@
     </div>
   </nav> 
 	<br><br><br><br>
+
+
+  <
 <div class="container">
-    	<div class="col-xs-12 col-sm-9 col-md-9">
 
       <?php foreach ($artikel as $key): ?>
 
+      <div class="col-xs-12 col-sm-9 col-md-9">
           <div class="row">
             <div class="col-md-4">
               <h3><?php echo $key->judul_blog ?></h3>
@@ -93,12 +96,15 @@
               </p>
               <br></br>
               <!-- button delete -->
-              <a href='view_blog/delete/<?php echo $key->id_blog?>' class='btn btn-sm btn-danger'>HAPUS</a>
+              <a href='view_blog/edit/<?php echo $key->id_blog?>' class='btn btn-sm btn-info'>Edit</a>
+              <a href='view_blog/delete/<?php echo $key->id_blog?>' class='btn btn-sm btn-danger'>HAPUS</a><br><br>
             </div>
           </div>
         </div>
         <?php endforeach ?>
 </div>
+<br><br>
+<h1>Form membuat blog</h1>
 <div class="container">
       <?php
         echo form_open('view_blog/tambah', array('enctype'=>'multipart/form-data')); 
@@ -106,27 +112,7 @@
 
       <table>
         <tr>
-          <td><font color="black">Judul</font></td>
-          <td>:</td>
-          <td><input type="text" name="input_judul" value="<?php echo set_value('input_judul'); ?>"></td>
-        </tr>
-        <tr>
-          <td><font color="black">Content</font></td>
-          <td>:</td>
-          <td><input type="text" name="input_content" value=""></td>
-        </tr>
-        <tr>
-          <td><font color="black">Tanggal</font> </td>
-          <td>:</td>
-          <td><input type="date" name="input_tanggal" value=""></td>
-        </tr>
-        <tr>
-          <td><font color="black">Gambar</font></td>
-          <td>:</td>
-          <td><input type="file" name="input_gambar"></td>
-        </tr>
-        <tr>
-          <td colspan="3"><input type="submit" name="simpan" value="simpan"></td>
+          <td colspan="3"><input type="submit" name="simpan" value="Tambah"></td>
         </tr>
       </table>
     </div>

@@ -28,25 +28,25 @@
   <!-- <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet"> -->
   
   <!-- Animate.css -->
-  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="../../assets/css/animate.css">
   <!-- Icomoon Icon Fonts-->
-  <link rel="stylesheet" href="assets/css/icomoon.css">
+  <link rel="stylesheet" href="../../assets/css/icomoon.css">
   <!-- Themify Icons-->
-  <link rel="stylesheet" href="assets/css/themify-icons.css">
+  <link rel="stylesheet" href="../../assets/css/themify-icons.css">
   <!-- Bootstrap  -->
-  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="../../assets/css/bootstrap.css">
   <!-- Magnific Popup -->
-  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="../../assets/css/magnific-popup.css">
   <!-- Owl Carousel  -->
-  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../../assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../../assets/css/owl.theme.default.min.css">
   <!-- Flexslider -->
-  <link rel="stylesheet" href="assets/css/flexslider.css">
+  <link rel="stylesheet" href="../../assets/css/flexslider.css">
   <!-- Theme style  -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
 
   <!-- Modernizr JS -->
-  <script src="assets/js/modernizr-2.6.2.min.js"></script>
+  <script src="../../assets/js/modernizr-2.6.2.min.js"></script>
   <!-- FOR IE9 below -->
   <!--[if lt IE 9]>
   <script src="js/respond.min.js"></script>
@@ -54,7 +54,7 @@
 
   </head>
   <body>
-    
+    <br><br><br><br>
   <div class="gtco-loader"></div>
   
   <div id="page">
@@ -76,22 +76,22 @@
       
     </div>
   </nav> 
-
+<form method="post" class="form-horizontal" enctype="multipart/form-data">
 <table>
         <tr>
           <td><font color="black">Judul</font></td>
           <td>:</td>
-          <td><input type="text" name="input_judul" value="<?php echo set_value('input_judul'); ?>"></td>
+          <td><input type="text" name="judul_atk" value="<?=isset($default['judul_blog'])? $default['judul_blog'] : ""?>"></td>
         </tr>
         <tr>
           <td><font color="black">Content</font></td>
           <td>:</td>
-          <td><input type="text" name="input_content" value=""></td>
+          <td><textarea name="isi_atk" class="form-control" required><?=isset($default['content'])? $default['content'] : ""?></textarea></td>
         </tr>
         <tr>
           <td><font color="black">Tanggal</font> </td>
           <td>:</td>
-          <td><input type="text" name="input_tanggal" value=""></td>
+          <td><input type="date" required class="form-control" name="tggl_atk" value="<?=isset($default['tgl_blog'])? $default['tgl_blog'] : ""?>"></td>
         </tr>
         <tr>
           <td><font color="black">Gambar</font></td>
@@ -99,32 +99,48 @@
           <td><input type="file" name="input_gambar"></td>
         </tr>
         <tr>
+          <td><font color="black">Jenis</font></td>
+          <td>:</td>
+          <td><textarea name="jenis_atk" class="form-control" required><?=isset($default['jenis_blog'])? $default['jenis_blog'] : ""?></textarea></td>
+        </tr>
+        <tr>
+          <td><font color="black">Pengarang</font></td>
+          <td>:</td>
+          <td><textarea name="pengarang_atk" class="form-control" required><?=isset($default['pengarang_blog'])? $default['pengarang_blog'] : ""?></textarea></td>
+        </tr>
+        <tr>
+          <td><font color="black">Email</font></td>
+          <td>:</td>
+          <td><textarea name="email_atk" class="form-control" required><?=isset($default['email_blog'])? $default['email_blog'] : ""?></textarea></td>
+        </tr>
+        <tr>
           <td colspan="3"><input type="submit" name="simpan" value="simpan"></td>
         </tr>
       </table>
+      </form>
       <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
   </div>
   
   <!-- jQuery -->
-  <script src="assets/js/jquery.min.js"></script>
+  <script src="../../assets/js/jquery.min.js"></script>
   <!-- jQuery Easing -->
-  <script src="assets/js/jquery.easing.1.3.js"></script>
+  <script src="../../assets/js/jquery.easing.1.3.js"></script>
   <!-- Bootstrap -->
-  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
   <!-- Waypoints -->
-  <script src="assets/js/jquery.waypoints.min.js"></script>
+  <script src="../../assets/js/jquery.waypoints.min.js"></script>
   <!-- Carousel -->
-  <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="../../assets/js/owl.carousel.min.js"></script>
   <!-- countTo -->
-  <script src="assets/js/jquery.countTo.js"></script>
+  <script src="../../assets/js/jquery.countTo.js"></script>
   <!-- Flexslider -->
-  <script src="assets/js/jquery.flexslider-min.js"></script>
+  <script src="../../assets/js/jquery.flexslider-min.js"></script>
   <!-- Magnific Popup -->
-  <script src="assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="assets/js/magnific-popup-options.js"></script>
+  <script src="../../assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="../../assets/js/magnific-popup-options.js"></script>
   <!-- Main -->
-  <script src="assets/js/main.js"></script>
+  <script src="../../assets/js/main.js"></script>
 
   </body>
 </html>

@@ -24,6 +24,21 @@
           <td><input type="file" name="input_gambar"></td>
         </tr>
         <tr>
+          <td>Jenis</td>
+          <td>:</td>
+          <td><input type="text" name="input_jenis" value="<?php echo set_value('input_jenis'); ?>" ></td>
+        </tr>
+        <tr>
+          <td>Pengarang</td>
+          <td>:</td>
+          <td><input type="text" name="input_pengarang" value="<?php echo set_value('input_pengarang'); ?>" ></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>:</td>
+          <td><input type="text" name="input_email" value="<?php echo set_value('input_eamil'); ?>" ></td>
+        </tr>
+        <tr>
           <td colspan="3"><input type="submit" name="simpan" value="simpan"></td>
         </tr>
       </table>
