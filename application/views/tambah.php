@@ -1,6 +1,6 @@
 <div class="container">
       <?php echo validation_errors(); ?>
-      <?php echo form_open('view_blog/tambah');?>
+      <?php echo form_open('view_blog/tambah', array('enctype'=>'multipart/form-data'));?>
 
       <table>
         <tr>

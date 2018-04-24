@@ -1,6 +1,6 @@
 <div class="container">
       <?php
-        echo form_open('blog/tambah', array('enctype'=>'multipart/form-data')); 
+        echo form_open('view_blog/tambah', array('enctype'=>'multipart/form-data')); 
        ?>
       <table>
         <tr>

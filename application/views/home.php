@@ -86,6 +86,8 @@
 		   				<div class="slider-text-inner">
 		   					<h2>Framework For CodeIgneiter</h2>
 		   					<h1><a href="view_blog" >Blog</a></h1>
+		   					<br><br>
+		   				<h1><a href="view_category" >Category</a></h1>
 		   				</div>
 		   			</div>
 		   		</div>
