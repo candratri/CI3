@@ -8,6 +8,12 @@
 			return $query->result();
 		}	
 
+		public function get_all_categories()
+		{
+			$query = $this->db->get('category');
+			return $query->result();
+		}
+
 		public function get_single($id)
 		{
 			$query = $this->db->query('select * from blog where id_blog='.$id);
@@ -78,35 +84,28 @@
 	// Fungsi untuk menyimpan data ke database
 	public function save($upload){
 		$data = array(
-			'id_blog' => $this->input->post('null'),
-			'judul_blog' => $this->input->post('judul_atk'),
-			'tanggal_blog' => $this->input->post('tggl_atk'),
-			'content' => $this->input->post('isi_atk'),
-			'jenis_blog' => $this->input->post('jenis_atk'),
-			'pengarang_blog' => $this->input->post('pengarang_atk'),
-			'email_blog' => $this->input->post('email_atk'),
-			'gambar_blog' => $upload['file']['file_name']
+			'id_cat' => $this->input->post('null'),
+			'name_cat' => $this->input->post('name_atk'),
+			'description_cat' => $this->input->post('description_atk'),
+			'tgl_cat' => $this->input->post('tggl_atk')
 			
 		);
 		
-		$this->db->insert('nama', $data);
+		$this->db->insert('category', $data);
 	}
 
 	public function update($post, $id){
 		//parameter $id wajib digunakan agar program tahu ID mana yang ingin diubah datanya.
-		$judul_atk = $this->db->escape($post['judul_atk']);
-		$isi_atk = $this->db->escape($post['isi_atk']);
+		$name_atk = $this->db->escape($post['name_atk']);
+		$description_atk = $this->db->escape($post['desciption_atk']);
 		$tggl_atk = $this->db->escape($post['tggl_atk']);
-		$jenis_atk = $this->db->escape($post['jenis_atk']);
-		$pengarang_atk = $this->db->escape($post['pengarang_atk']);
-		$email_atk = $this->db->escape($post['email_atk']);
-		$sql = $this->db->query("UPDATE blog SET judul_blog = $judul_atk, tgl_blog = $tggl_atk, content = $isi_atk, jenis_blog = $jenis_atk, pengarang_blog = $pengarang_atk, email_blog = $email_atk WHERE id_blog = ".intval($id));
+		$sql = $this->db->query("UPDATE category SET name_cat = $name_atk, description_cat = $description_atk, tgl_cat = $tggl_atk WHERE id_cat = ".intval($id));
 		return true;
 	}
 
 
 		//fungsi delete
 		public function hapus($id){
-			$query = $this->db->query('DELETE from blog WHERE id_blog= '.$id);
+			$query = $this->db->query('DELETE from category WHERE id_cat= '.$id);
 		}
 	}

@@ -22,14 +22,16 @@ class view_blog extends CI_Controller {
 	{
 
 		$this->load->model('list_blog');
+		$this->load->model('list_category');
 		 $data = array();		
+		 $data['topik'] = $this->list_category->get_all_categories();
   
 		 $this->load->library('form_validation');
 		 $this->form_validation->set_rules('input_judul', 'Judul', 'required', array('required' => 'isi %s .'));
 		 $this->form_validation->set_rules('input_content','Content','required',array('required' => 'isi %s.'));
 
 		 if($this->form_validation->run()==FALSE){
-		 	$this->load->view('tambah');
+		 	$this->load->view('tambah', $data);
 		 }
 		 else
 		 {
@@ -52,6 +54,9 @@ class view_blog extends CI_Controller {
 		$this->load->model("list_blog");
 		$data['tipe'] = "Edit";
 		$data['default'] = $this->list_blog->get_default($id);
+		$this->load->model('list_category');
+		 $data = array();		
+		 $data['topik'] = $this->list_category->get_all_categories();
 
 		if(isset($_POST['simpan'])){
 			$this->list_blog->update($_POST, $id);

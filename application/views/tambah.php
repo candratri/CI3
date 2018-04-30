@@ -34,9 +34,13 @@
           <td><input type="text" name="input_pengarang" value="<?php echo set_value('input_pengarang'); ?>" ></td>
         </tr>
         <tr>
-          <td><font color="black">Email</font></td>
-          <td>:</td>
-          <td><input type="text" name="input_email" value="<?php echo set_value('input_eamil'); ?>" ></td>
+          <label>Kategory</label>
+          <select name="id_cat" class="form-control" required>
+            <option value="">Pilih kategori</option>
+            <?php foreach($topik as $topik): ?>
+              <option value="<?php echo $topik->id_cat; ?>"><?php echo $topik->name_cat; ?></option>
+            <?php endforeach; ?>
+          </select>
         </tr>
         <tr>
           <td colspan="3"><input type="submit" name="simpan" value="Tambah"></td>

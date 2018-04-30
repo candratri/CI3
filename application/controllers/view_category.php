@@ -45,24 +45,24 @@ class view_category extends CI_Controller {
 	//fungsi update
 	
 	public function edit($id){
-		$this->load->model("list_blog");
+		$this->load->model("list_category");
 		$data['tipe'] = "Edit";
-		$data['default'] = $this->list_blog->get_default($id);
+		$data['default'] = $this->list_category->get_default($id);
 
 		if(isset($_POST['simpan'])){
-			$this->list_blog->update($_POST, $id);
-			redirect("view_blog");
+			$this->list_category->update($_POST, $id);
+			redirect("view_category");
 		}
 
-		$this->load->view("tabel_view",$data);
+		$this->load->view("edit_cat",$data);
 	}
 
 
 	//fungsi delete
 	public function delete($id){
-		$this->load->model('list_blog');
-		$this->list_blog->hapus($id);
-		redirect('view_blog');
+		$this->load->model('list_category');
+		$this->list_category->hapus($id);
+		redirect('view_category');
 	}
 
 	

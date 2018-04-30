@@ -95,8 +95,8 @@
               </p>
               <br></br>
               <!-- button delete -->
-              <a href='view_blog/edit/<?php echo $key->id_blog?>' class='btn btn-sm btn-info'>Edit</a>
-              <a href='view_blog/delete/<?php echo $key->id_blog?>' class='btn btn-sm btn-danger'>HAPUS</a><br><br>
+              <a href='view_category/edit/<?php echo $key->id_cat?>' class='btn btn-sm btn-info'>Edit</a>
+              <a href='view_category/delete/<?php echo $key->id_cat?>' class='btn btn-sm btn-danger'>HAPUS</a><br><br>
             </div>
           </div>
         </div>

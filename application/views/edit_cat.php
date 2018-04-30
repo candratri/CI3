@@ -79,43 +79,14 @@
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
 <table>
         <tr>
-          <td><font color="black">Judul</font></td>
+          <td><font color="black">Nama Category</font></td>
           <td>:</td>
-          <td><input type="text" name="judul_atk" value="<?=isset($default['judul_blog'])? $default['judul_blog'] : ""?>"></td>
+          <td><input type="text"  name="name_atk" class="form-control" value="<?=isset($default['name_cat'])? $default['name_cat'] : ""?>"</td>
         </tr>
         <tr>
-          <td><font color="black">Content</font></td>
+          <td><font color="black">Description Category</font></td>
           <td>:</td>
-          <td><textarea name="isi_atk" class="form-control" required><?=isset($default['content'])? $default['content'] : ""?></textarea></td>
-        </tr>
-        <tr>
-          <td><font color="black">Tanggal</font> </td>
-          <td>:</td>
-          <td><input type="date" required class="form-control" name="tggl_atk" value="<?=isset($default['tgl_blog'])? $default['tgl_blog'] : ""?>"></td>
-        </tr>
-        <tr>
-          <td><font color="black">Gambar</font></td>
-          <td>:</td>
-          <td><input type="file" name="input_gambar"></td>
-        </tr>
-        <tr>
-          <td><font color="black">Jenis</font></td>
-          <td>:</td>
-          <td><textarea name="jenis_atk" class="form-control" required><?=isset($default['jenis_blog'])? $default['jenis_blog'] : ""?></textarea></td>
-        </tr>
-        <tr>
-          <td><font color="black">Pengarang</font></td>
-          <td>:</td>
-          <td><textarea name="pengarang_atk" class="form-control" required><?=isset($default['pengarang_blog'])? $default['pengarang_blog'] : ""?></textarea></td>
-        </tr>
-        <tr>
-          <label>Kategory</label>
-          <select name="id_cat" class="form-control" required>
-            <option value="">Pilih kategori</option>
-            <?php foreach($topik as $topik): ?>
-              <option value="<?php echo $topik->id_cat; ?>"><?php echo $topik->name_cat; ?></option>
-            <?php endforeach; ?>
-          </select>
+          <td><textarea name="description_atk" class="form-control" required><?=isset($default['description_cat'])? $default['description_cat'] : ""?></textarea></td>
         </tr>
         <tr>
           <td colspan="3"><input type="submit" name="simpan" value="simpan"></td>
