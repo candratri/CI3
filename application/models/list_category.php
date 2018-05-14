@@ -8,10 +8,21 @@
 			return $query->result();
 		}	
 
-		public function get_all_categories()
+		public function get_all_categories($limit = FALSE, $offset = FALSE)
 		{
+			if ($limit) {
+				$this->db->limit($limit, $offset);
+			}
+
+			$this->db->order_by('category.tgl_cat', 'DESC');
+
 			$query = $this->db->get('category');
 			return $query->result();
+		}
+
+		public function get_total()
+		{
+			return $this->db->count_all("category");
 		}
 
 		public function get_single($id)

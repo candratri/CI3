@@ -35,8 +35,6 @@
   <link rel="stylesheet" href="assets/css/themify-icons.css">
   <!-- Bootstrap  -->
   <link rel="stylesheet" href="assets/css/bootstrap.css">
-
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <!-- Magnific Popup -->
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
   <!-- Owl Carousel  -->
@@ -47,12 +45,8 @@
   <!-- Theme style  -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <link rel="stylesheet" href="<?php echo base_url(). 'assets/css/jquery.dataTables.min.css'?>">
-
   <!-- Modernizr JS -->
   <script src="assets/js/modernizr-2.6.2.min.js"></script>
-  
-  <script src="<?php echo base_url() ?>assets/js/jquery-1.9.1.min.js"></script>
   <!-- FOR IE9 below -->
   <!--[if lt IE 9]>
   <script src="js/respond.min.js"></script>
@@ -82,7 +76,7 @@
       
     </div>
   </nav> 
-	<br><br><br><br>
+    <br><br><br><br>
 
 
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
@@ -97,7 +91,7 @@
 
     <div class="container">
 
-      <h1 class="jumbotron-heading">Blog DataTables(dt_view)</h1>
+      <h1 class="jumbotron-heading">Basic DataTables</h1>
 
       
 
@@ -189,29 +183,61 @@
 
 </main>
 
-<div class="container">
+<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/jquery.dataTables.min.css">
 
-      <?php foreach ($artikel as $key): ?>
+<script src="<?php echo base_url() ?>assets/js/jquery.dataTables.min.js"></script>
 
-      <div class="col-xs-12 col-sm-9 col-md-9">
-          <div class="row">
-            <div class="col-md-4">
-              <h3><?php echo $key->judul_blog ?></h3>
-              <br>
-              <img src="gambar/<?php echo $key->gambar_blog;?>" alt="Image" width="500">
-              <p>
-                diupload tanggal : <?php echo $key->tgl_blog ?><br>
-                <a href="<?php echo site_url()?>view_blog/detail/<?php echo $key->id_blog ?>">Read More ...</a>
-              </p>
-              <br></br>
-              <!-- button delete -->
-              <a href='view_blog/edit/<?php echo $key->id_blog?>' class='btn btn-sm btn-info'>Edit</a>
-              <a href='view_blog/delete/<?php echo $key->id_blog?>' class='btn btn-sm btn-danger'>HAPUS</a><br><br>
-            </div>
-          </div>
-        </div>
-<?php endforeach ?>
+<script src="<?php echo base_url() ?>assets/js/jquery.dataTables.bootstrap4.min.js"></script>
 
+<script>
+
+    jQuery(document).ready(function(){
+
+
+
+        // Contoh inisialisasi Datatable tanpa konfigurasi apapun
+
+        // #dt-basic adalah id html dari tabel yang diinisialisasi
+
+        $('#dt-basic').DataTable();
+
+
+
+        $('#dt-blog-ajax').DataTable({
+
+            "processing": true,
+
+            "serverSide": true,
+
+            "ajax": "<?php echo base_url() ?>datatables/get_json",
+
+            "columns": [
+
+                { "data": "post_id" },
+
+                { "data": "post_judul" },
+
+                { "data": "post_tgl" },
+
+                { "data": "post_content" },
+
+                { "data": "post_gambar" },
+
+                { "data": "date_jenis" },
+
+                { "data": "post_idcat" },
+
+            ],
+
+        });
+
+    });
+
+
+
+</script>
+<br><br>
+<h1>Form membuat blog</h1>
 <div class="container">
       <?php
         echo form_open('view_blog/tambah', array('enctype'=>'multipart/form-data')); 
@@ -234,32 +260,45 @@
 
    ?>
 <br><br>
+  <nav aria-label="Page navigation example">
+ <ul class="pagination justify-content-center">
+   <li class="page-item disabled">
+     <a class="page-link" href="#" tabindex="-1">Previous</a>
+   </li>
+   <li class="page-item"><a class="page-link" href="#">1</a></li>
+   <li class="page-item"><a class="page-link" href="#">2</a></li>
+   <li class="page-item"><a class="page-link" href="#">3</a></li>
+   <li class="page-item">
+     <a class="page-link" href="#">Next</a>
+   </li>
+ </ul>
+</nav>
 
 
 <br><br><br>
 
 
-	<div class="gototop js-top">
+    <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
   </div>
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/jquery.dataTables.min.css">
-  <script src="<?php echo base_url() ?>assets/js/jquery.dataTables.min.js"></script>
-  <script src="<?php echo base_url() ?>assets/js/jquery.dataTables.bootstrap4.min.js"></script>
-  <script>
-      jQuery(document).ready(function(){
-
-          // Contoh inisialisasi Datatable tanpa konfigurasi apapun
-          // #dt-basic adalah id html dari tabel yang diinisialisasi
-          $('#dt-basic').DataTable();
-      });
-
-  </script>
-
+  
+  <!-- jQuery -->
+  <script src="assets/js/jquery.min.js"></script>
+  <!-- jQuery Easing -->
+  <script src="assets/js/jquery.easing.1.3.js"></script>
+  <!-- Bootstrap -->
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!-- Waypoints -->
   <script src="assets/js/jquery.waypoints.min.js"></script>
   <!-- Carousel -->
   <script src="assets/js/owl.carousel.min.js"></script>
   <!-- countTo -->
+  <script src="assets/js/jquery.countTo.js"></script>
+  <!-- Flexslider -->
+  <script src="assets/js/jquery.flexslider-min.js"></script>
+  <!-- Magnific Popup -->
   <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/magnific-popup-options.js"></script>
   <!-- Main -->
   <script src="assets/js/main.js"></script>
 

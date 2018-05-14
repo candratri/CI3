@@ -90,37 +90,116 @@
           <td colspan="3"><input type="submit" name="simpan" value="Tambah"></td>
         </tr>
       </table>
-    </div>        
-    </div>
-        <div class="card-body">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <td> Id Category </td>
-                  <td> Name Category</td>
-                  <td> Description Category</td>
-                  <td> Tanggal Cartegory</td>
-                  <td> Aksi</td>
-                </tr>
-              </thead>
+   <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
-                <tbody>
-                  <?php foreach($topik as $key) : ?>
-                  <tr>
-                  <td><?php echo $key->id_cat; ?></td>
-                    <td><?php echo $key->name_cat; ?></td>
-                    <td><?php echo $key->description_cat; ?></td>
-                    <td><?php echo $key->tgl_cat; ?></td>
-                    <td><a href='view_pengiriman/edit/<?php echo $key->id_pengiriman?>' class='btn btn-sm btn-info'>Edit</a>
-                      <a href='view_pengiriman/delete/<?php echo $key->id_pengiriman?>' class='btn btn-sm btn-danger'>HAPUS</a></td>
-                  </tr>
-                 <?php endforeach; ?>
-              </tbody>
 
-            </table>
-          </div>
-      </div>
+
+<main role="main">
+
+
+
+  <section class="jumbotron text-center">
+
+    <div class="container">
+
+      <h1 class="jumbotron-heading">Basic DataTables category (dt_json)</h1>
+
+      
+
     </div>
+
+    </section>
+
+    
+
+    <section class="py-5 bg-light">
+
+        <div class="container">
+
+            <div class="row">
+
+                <table id="dt-ajax" class="table table-striped table-bordered">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID Category</th>
+
+                            <th>Nama</th>
+
+                            <th>Description</th>
+
+                            <th>tangal</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+  
+
+</main>
+
+<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/jquery.dataTables.min.css">
+
+<script src="<?php echo base_url() ?>assets/js/jquery.dataTables.min.js"></script>
+
+<script src="<?php echo base_url() ?>assets/js/jquery.dataTables.bootstrap4.min.js"></script>
+
+<script>
+
+    jQuery(document).ready(function(){
+
+
+
+        $('#dt-ajax').DataTable({
+
+            "ajax": "<?php echo base_url() ?>datatables/get_json",
+
+            "columns": [
+
+                { "data": "id_cat" },
+
+                { "data": "name_cat" },
+
+                { "data": "description_cat" },
+
+                { "data": "tgl_cat" },
+
+
+                // Kolom Action
+
+                { 
+
+                    "data" : null,
+
+                    "render": function (data) {
+
+                        return '<a href="<?php echo base_url('view_category/edit/') ?>'+ data.id_cat + '" class="btn btn-sm btn-outline-primary">Edit</a> <a href="<?php echo base_url('view_category/delete/') ?>'+ data.id_cat + '" class="btn btn-sm btn-outline-danger">Delete</a>' 
+
+                    }
+
+                },
+
+            ],
+
+        });
+
+    });
+
+
+
+</script>
 <br><br><br><br><br>
 
   

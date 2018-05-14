@@ -8,6 +8,8 @@ class view_category extends CI_Controller {
 		$this->load->model('list_category');
 		$data['topik'] = $this->list_category->get_categorys();
 		$this->load->view('home_category', $data);
+
+		
 	}
 
 	public function detail($id)

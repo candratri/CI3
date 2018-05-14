@@ -20,6 +20,23 @@
 			return $this->db->get()->result();
 		}
 
+		public function get_total()
+		{
+			return $this->db->count_all("blog");
+		}
+
+		public function get_all_blogs($limit = FALSE, $offset = FALSE)
+		{
+			if ($limit) {
+				$this->db->limit($limit, $offset);
+			}
+
+			$this->db->order_by('blog.tgl_blog', 'DESC');
+
+			$query = $this->db->get('blog');
+			return $query->result();
+		}
+
 		public function get_default($id)
 		{
 			$data = array();

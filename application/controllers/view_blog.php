@@ -6,8 +6,39 @@ class view_blog extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('list_blog');
-		$data['artikel'] = $this->list_blog->get_artikels();
-		$this->load->view('home_view', $data);
+		//$data['artikel'] = $this->list_blog->get_artikels();
+
+		$limit_per_page = 6;
+		$start_index = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+		$total_records = $this->list_blog->get_total();
+
+		if  ($total_records > 0) {
+
+
+			$data["artikel"] = $this->list_blog->get_all_blogs($limit_per_page, $start_index);
+
+			
+
+			$config['base_url'] = base_url() . 'blog/index';
+
+			$config['total_rows'] = $total_records;
+
+			$config['per_page'] = $limit_per_page;
+
+			$config["uri_segment"] = 3;
+
+			
+
+			$this->pagination->initialize($config);
+
+				
+
+			// Buat link pagination
+
+			$data["links"] = $this->pagination->create_links();
+
+			$this->load->view('home_view', $data);
+		}
 	}
 
 	public function detail($id)
