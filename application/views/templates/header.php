@@ -1,7 +1,4 @@
-<?php if (!$this->session->userdata('logged_in')) {
-  redirect('User/login');
-} ?>
-<!DOCTYPE HTML>
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?><!doctype html>
 <!--
   Asymmetry by gettemplates.co
   Twitter: http://twitter.com/gettemplateco
@@ -76,92 +73,47 @@
                         <li class="active"><a href="<?php echo base_url()?>home">Home</a></li>
                         <li><a href="<?php echo base_url()?>view_blog" >Blog</a></li>
                         <li><a href="<?php echo base_url()?>view_category" >Category</a></li>
-                        <li><a href="<?php echo base_url()?>User/logout" >LOGOUT</a></li>
                     </ul>
             </div>
             
         </div>
     </nav>
-	<br><br><br><br>
 
-<div class="content-wrapper">
-    <div class="container-fluid">
-      
-      <!-- Example DataTables Card-->
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-table"></i> Data Tabel Category</div>
+                <?php if(!$this->session->userdata('logged_in')) : ?>
 
-          <?php
-        echo form_open('view_category/tambah', array('enctype'=>'multipart/form-data')); 
-       ?>
+                    <div class="btn-group" role="group" aria-label="Data baru">
+                        <?php echo anchor('User/register', 'Register', array('class' => 'btn btn-outline-light')); ?>
+                        <?php echo anchor('User/login', 'Login', array('class' => 'btn btn-outline-light')); ?>
 
-      <table>
-        <tr>
-          <td colspan="3"><input type="submit" name="simpan" value="Tambah"></td>
-        </tr>
-      </table>
-    </div>        
-    </div>
-        <div class="card-body">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <td> Id Category </td>
-                  <td> Name Category</td>
-                  <td> Description Category</td>
-                  <td> Tanggal Cartegory</td>
-                  <td> Aksi</td>
-                </tr>
-              </thead>
+                    </div>
 
-                <tbody>
-                  <?php foreach($topik as $key) : ?>
-                  <tr>
-                  <td><?php echo $key->id_cat; ?></td>
-                    <td><?php echo $key->name_cat; ?></td>
-                    <td><?php echo $key->description_cat; ?></td>
-                    <td><?php echo $key->tgl_cat; ?></td>
-                    <td><a href='view_pengiriman/edit/<?php echo $key->id_pengiriman?>' class='btn btn-sm btn-info'>Edit</a>
-                      <a href='view_pengiriman/delete/<?php echo $key->id_pengiriman?>' class='btn btn-sm btn-danger'>HAPUS</a></td>
-                  </tr>
-                 <?php endforeach; ?>
-              </tbody>
+                <?php endif; ?>
 
-            </table>
-          </div>
-      </div>
-    </div>
-<br><br><br><br><br>
+                <?php if($this->session->userdata('logged_in')) : ?>
+                    <div class="btn-group" role="group" aria-label="Data baru">
 
-  
+                        <?php echo anchor('view_blog/create', 'Artikel Baru', array('class' => 'btn btn-outline-light')); ?>
+                        <?php echo anchor('view_category/create', 'Kategori Baru', array('class' => 'btn btn-outline-light')); ?>
+                        <?php echo anchor('User/logout', 'Logout', array('class' => 'btn btn-outline-light')); ?>
+                    </div>
+                <?php endif; ?>
 
+            </div>
+        </nav>
 
+        <?php if($this->session->flashdata('user_registered')): ?>
+          <?php echo '<div class="alert alert-success" role="alert">'.$this->session->flashdata('user_registered').'</div>'; ?>
+        <?php endif; ?>
+        <?php if($this->session->flashdata('login_failed')): ?>
+          <?php echo '<div class="alert alert-danger">'.$this->session->flashdata('login_failed').'</div>'; ?>
+        <?php endif; ?>
 
+        <?php if($this->session->flashdata('user_loggedin')): ?>
+          <?php echo '<div class="alert alert-success">'.$this->session->flashdata('user_loggedin').'</div>'; ?>
+        <?php endif; ?>
 
-	<div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-  </div>
-  
-  <!-- jQuery -->
-  <script src="assets/js/jquery.min.js"></script>
-  <!-- jQuery Easing -->
-  <script src="assets/js/jquery.easing.1.3.js"></script>
-  <!-- Bootstrap -->
-  <script src="assets/js/bootstrap.min.js"></script>
-  <!-- Waypoints -->
-  <script src="assets/js/jquery.waypoints.min.js"></script>
-  <!-- Carousel -->
-  <script src="assets/js/owl.carousel.min.js"></script>
-  <!-- countTo -->
-  <script src="assets/js/jquery.countTo.js"></script>
-  <!-- Flexslider -->
-  <script src="assets/js/jquery.flexslider-min.js"></script>
-  <!-- Magnific Popup -->
-  <script src="assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="assets/js/magnific-popup-options.js"></script>
-  <!-- Main -->
-  <script src="assets/js/main.js"></script>
-
-  </body>
-</html>
+         <?php if($this->session->flashdata('user_loggedout')): ?>
+          <?php echo '<div class="alert alert-success">'.$this->session->flashdata('user_loggedout').'</div>'; ?>
+        <?php endif; ?>
+        
+        <!-- akhir Header -->

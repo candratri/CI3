@@ -1,3 +1,6 @@
+<?php if (!$this->session->userdata('logged_in')) {
+  redirect('User/login');
+} ?>
 <div class="container">
       <?php
         echo form_open('view_blog/tambah', array('enctype'=>'multipart/form-data')); 

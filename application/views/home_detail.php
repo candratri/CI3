@@ -1,3 +1,6 @@
+<?php if (!$this->session->userdata('logged_in')) {
+  redirect('User/login');
+} ?>
 <!DOCTYPE HTML>
 <!--
   Asymmetry by gettemplates.co
@@ -28,25 +31,31 @@
   <!-- <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet"> -->
   
   <!-- Animate.css -->
-  <link rel="stylesheet" href="../../assets/css/animate.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/animate.css">
   <!-- Icomoon Icon Fonts-->
-  <link rel="stylesheet" href="../../assets/css/icomoon.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/icomoon.css">
   <!-- Themify Icons-->
-  <link rel="stylesheet" href="../../assets/css/themify-icons.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/themify-icons.css">
   <!-- Bootstrap  -->
-  <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap.css">
+
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap.min.css">
   <!-- Magnific Popup -->
-  <link rel="stylesheet" href="../../assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/magnific-popup.css">
   <!-- Owl Carousel  -->
-  <link rel="stylesheet" href="../../assets/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="../../assets/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/owl.theme.default.min.css">
   <!-- Flexslider -->
-  <link rel="stylesheet" href="../../assets/css/flexslider.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/flexslider.css">
   <!-- Theme style  -->
-  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
+
+  <link rel="stylesheet" href="<?php echo base_url(). 'assets/css/jquery.dataTables.min.css'?>">
 
   <!-- Modernizr JS -->
-  <script src="../../assets/js/modernizr-2.6.2.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/modernizr-2.6.2.min.js"></script>
+  
+  <script src="<?php echo base_url() ?>assets/js/jquery-1.9.1.min.js"></script>
   <!-- FOR IE9 below -->
   <!--[if lt IE 9]>
   <script src="js/respond.min.js"></script>
@@ -56,25 +65,23 @@
   <body>
     
   <div class="gtco-loader"></div>
-  
   <div id="page">
   <nav class="gtco-nav" role="navigation">
     <div class="gtco-container">
       <div class="row">
         <div class="col-sm-2 col-xs-12">
-          <div id="gtco-logo"><a href="index.html">Framework <em></em></a></div>
+          <div id="gtco-logo"><a href="<?php echo base_url()?>home">Framework <em></em></a></div>
+                </div>
+                    <ul>
+                        <li class="active"><a href="<?php echo base_url()?>home">Home</a></li>
+                        <li><a href="<?php echo base_url()?>view_blog" >Blog</a></li>
+                        <li><a href="<?php echo base_url()?>view_category" >Category</a></li>
+                        <li><a href="<?php echo base_url()?>user/register" >Register</a></li>
+                    </ul>
+            </div>
+            
         </div>
-        <div class="col-xs-10 text-right menu-1 main-nav">
-          <ul>
-            <li class="active"><a href="#" data-nav-section="home">Home</a></li>
-            <li><a href="#" data-nav-section="blog">Blog</a></li>
-            <li><a href="#" data-nav-section="about">About</a></li>
-          </ul>
-        </div>
-      </div>
-      
-    </div>
-  </nav> 
+    </nav>
 	<br><br><br><br>
 <div class="container">
     	<div class="col-xs-12 col-sm-9 col-md-9">

@@ -1,3 +1,6 @@
+<?php if (!$this->session->userdata('logged_in')) {
+  redirect('User/login');
+} ?>
 <!DOCTYPE HTML>
 <!--
   Asymmetry by gettemplates.co

@@ -36,7 +36,7 @@ class view_blog extends CI_Controller {
 			// Buat link pagination
 
 			$data["links"] = $this->pagination->create_links();
-
+			
 			$this->load->view('home_view', $data);
 		}
 	}

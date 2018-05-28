@@ -1,3 +1,6 @@
+<?php if (!$this->session->userdata('logged_in')) {
+  redirect('User/login');
+} ?>
 <div class="container">
       <?php echo validation_errors(); ?>
       <?php echo form_open('view_category/tambah', array('enctype'=>'multipart/form-data'));?>
