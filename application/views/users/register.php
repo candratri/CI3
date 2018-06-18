@@ -80,6 +80,18 @@
 
 					</div>
 
+					<div class="form-group">
+					    <label for="">Pilih Paket Membership</label>
+					    <div class="form-check">
+					        <input class="form-check-input" type="radio" name="membership" id="Officer" value="2" checked>
+					        <label class="form-check-label" for="Officer">Officer</label>
+					    </div>
+					    <div class="form-check">
+					        <input class="form-check-input" type="radio" name="membership" id="Member" value="3">
+					        <label class="form-check-label" for="Member">Member</label>
+					    </div>
+					</div>
+
 					<button type="submit" class="btn btn-primary btn-block">Daftar</button>
 
 				<?php echo form_close(); ?>

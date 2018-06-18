@@ -116,4 +116,5 @@
           <?php echo '<div class="alert alert-success">'.$this->session->flashdata('user_loggedout').'</div>'; ?>
         <?php endif; ?>
         
+
         <!-- akhir Header -->

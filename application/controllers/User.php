@@ -132,8 +132,9 @@ class User extends CI_Controller{
 
 			'username' => $username,
 
-			'logged_in' => true
+			'logged_in' => true,
 
+			'level' => $this->User_model->get_user_level($user_id),
 		);
 
 
@@ -148,7 +149,7 @@ class User extends CI_Controller{
 
 
 
-		redirect('view_blog');
+		redirect('User/dashboard');
 
 	} else {
 
@@ -161,6 +162,35 @@ class User extends CI_Controller{
 		redirect('User/login');
 
 	}		
+	function dashboard()
+	{
+
+		// Must login
+
+		if(!$this->session->userdata('logged_in')) 
+
+			redirect('user/login');
+
+
+
+		$user_id = $this->session->userdata('user_id');
+
+
+
+		// Dapatkan detail dari User
+
+		$data['user'] = $this->user_model->get_user_details( $user_id );
+
+
+
+		// Load view
+
+		$this->load->view('templates/header', $data, FALSE);
+
+		$this->load->view('users/dashboard', $data, FALSE);
+
+		$this->load->view('templates/footer', $data, FALSE);
+	}
 
 		}
 
@@ -192,6 +222,23 @@ class User extends CI_Controller{
 
 	}
 
+	function dashboard(){
+	
+		// Must login
+		if(!$this->session->userdata('logged_in')) 
+			redirect('user/login');
+
+		$user_id = $this->session->userdata('user_id');
+
+		// Dapatkan detail dari User
+		$data['user'] = $this->User_model->get_user_details( $user_id );
+
+		// Load view
+		$this->load->view('templates/header', $data, FALSE);
+		$this->load->view('users/dashboard', $data, FALSE);
+		$this->load->view('templates/footer', $data, FALSE);
+	}
+	
 
 
 }
