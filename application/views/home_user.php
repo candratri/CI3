@@ -71,14 +71,14 @@
       <div class="row">
         <div class="col-sm-2 col-xs-12">
           <div id="gtco-logo"><a href="<?php echo base_url()?>home">Framework <em></em></a></div>
-                </div>
+                <!-- </div>
                     <ul>
-                       <!--  <li class="active"><a href="<?php echo base_url()?>home">Home</a></li>
+                        <li class="active"><a href="<?php echo base_url()?>home">Home</a></li>
                         <li><a href="<?php echo base_url()?>view_blog" >Blog</a></li>
-                        <li><a href="<?php echo base_url()?>view_category" >Category</a></li> -->
+                        <li><a href="<?php echo base_url()?>view_category" >Category</a></li>
                         <li><a href="<?php echo base_url()?>User/logout" >LOGOUT</a></li>
                     </ul>
-            </div>
+            </div> -->
             
         </div>
     </nav>
@@ -90,10 +90,10 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Data Tabel Category</div>
+          <i class="fa fa-table"></i> Data Tabel User</div>
 
           <?php
-        echo form_open('view_category/tambah', array('enctype'=>'multipart/form-data')); 
+        echo form_open('User/tambah', array('enctype'=>'multipart/form-data')); 
        ?>
 
       <table>
@@ -107,23 +107,30 @@
             <table class="table table-bordered">
               <thead>
                 <tr>
-                  <td> Id Category </td>
-                  <td> Name Category</td>
-                  <td> Description Category</td>
-                  <td> Tanggal Cartegory</td>
-                  <td> Aksi</td>
+                  <td> Id User </td>
+                  <td> Fk Level</td>
+                  <td> Nama</td>
+                  <td> Kodepos</td>
+                  <td> Email</td>
+                  <td> Username</td>
+                  <td> Password</td>
+                  <td> Register_date</td>
                 </tr>
               </thead>
 
                 <tbody>
-                  <?php foreach($topik as $key) : ?>
+                  <?php foreach($artikel as $key) : ?>
                   <tr>
-                  <td><?php echo $key->id_cat; ?></td>
-                    <td><?php echo $key->name_cat; ?></td>
-                    <td><?php echo $key->description_cat; ?></td>
-                    <td><?php echo $key->tgl_cat; ?></td>
-                    <td><a href='view_pengiriman/edit/<?php echo $key->id_pengiriman?>' class='btn btn-sm btn-info'>Edit</a>
-                      <a href='view_pengiriman/delete/<?php echo $key->id_pengiriman?>' class='btn btn-sm btn-danger'>HAPUS</a></td>
+                  <td><?php echo $key->user_id; ?></td>
+                    <td><?php echo $key->fk_level_id; ?></td>
+                    <td><?php echo $key->nama; ?></td>
+                    <td><?php echo $key->kodepos; ?></td>
+                    <td><?php echo $key->email; ?></td>
+                    <td><?php echo $key->username; ?></td>
+                    <td><?php echo $key->password; ?></td>
+                    <td><?php echo $key->register_date; ?></td>
+                    <td><a href='User/edit/<?php echo $key->user_id?>' class='btn btn-sm btn-info'>Edit</a>
+                      <a href='User/delete/<?php echo $key->user_id?>' class='btn btn-sm btn-danger'>HAPUS</a></td>
                   </tr>
                  <?php endforeach; ?>
               </tbody>

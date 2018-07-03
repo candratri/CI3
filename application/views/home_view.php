@@ -73,9 +73,9 @@
           <div id="gtco-logo"><a href="<?php echo base_url()?>home">Framework <em></em></a></div>
                 </div>
                     <ul>
-                        <li class="active"><a href="<?php echo base_url()?>home">Home</a></li>
+                        <!-- <li class="active"><a href="<?php echo base_url()?>home">Home</a></li>
                         <li><a href="<?php echo base_url()?>view_blog" >Blog</a></li>
-                        <li><a href="<?php echo base_url()?>view_category" >Category</a></li>
+                        <li><a href="<?php echo base_url()?>view_category" >Category</a></li> -->
                         <li><a href="<?php echo base_url()?>user/logout" >LOGOUT</a></li>
                     </ul>
             </div>

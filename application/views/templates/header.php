@@ -69,11 +69,14 @@
         <div class="col-sm-2 col-xs-12">
           <div id="gtco-logo"><a href="<?php echo base_url()?>home">Framework <em></em></a></div>
                 </div>
-                    <ul>
-                        <li class="active"><a href="<?php echo base_url()?>home">Home</a></li>
-                        <li><a href="<?php echo base_url()?>view_blog" >Blog</a></li>
-                        <li><a href="<?php echo base_url()?>view_category" >Category</a></li>
+                    <ul
+                    <?php if($this->session->userdata('logged_in')) : ?>                        
+                        
                     </ul>
+                     <div class="btn-group" role="group" aria-label="Data baru">
+          <?php echo anchor('User/logout', 'Logout', array('class' => 'btn btn-outline-light')); ?>
+        </div>
+      <?php endif; ?>
             </div>
             
         </div>
